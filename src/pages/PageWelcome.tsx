@@ -6,7 +6,7 @@ export const PageWelcome = () => {
 
 	useEffect(() => {
 		(async () => {
-			const response = await fetch(config.backendUrl());
+			const response = await fetch(`${config.backendUrl()}/languages`);
 			const _languages: string[] = await response.json();
 			setLanguages(_languages);
 		})();
