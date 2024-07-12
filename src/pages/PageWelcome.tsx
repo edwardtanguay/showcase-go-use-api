@@ -16,7 +16,7 @@ export const PageWelcome = () => {
 
 	return (
 		<>
-			<p>There are there {languages.length} languages, being loaded from <a target="_blank" className="underline" href={languagesUrl}>{languagesUrl}</a>.</p>
+			<p>There are there {languages.length} languages, loaded from <a target="_blank" className="underline" href={languagesUrl}>{languagesUrl}</a>.</p>
 			<ul className="list-disc ml-4">
 				{languages.map((language, index) => {
 					return <li key={index}>{language}</li>;

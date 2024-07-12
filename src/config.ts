@@ -1,4 +1,4 @@
 export const backendUrl = (): string => {
-	// const url = "http://localhost:7788";
-	return "https://showcase-go-api.tanguay.eu";
+	const backendUrl = import.meta.env.VITE_BACKEND_URL;
+	return backendUrl;
 };
