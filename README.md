@@ -4,6 +4,10 @@ This site is the frontend to a showcase GO API that gets data from various sourc
 
 Online here: https://showcase-go-use-api.vercel.app
 
+Go backend API: https://github.com/edwardtanguay/showcase-go-api
+
+Foray: https://tanguay-eu.vercel.app/forays/315
+
 ## features
 
 - Vite
