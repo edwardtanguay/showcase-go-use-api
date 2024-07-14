@@ -26,7 +26,7 @@ export const ExampleDataFromMongo = () => {
 				</a>
 			</p>
 			<ul className="list-disc ml-4">
-				{skills.filter((m, index) => index < numToShow).map((skill, index) => {
+				{skills.filter((_, index) => index < numToShow).map((skill, index) => {
 					return <li key={index}>{skill.Name}</li>;
 				})}
 			</ul>
