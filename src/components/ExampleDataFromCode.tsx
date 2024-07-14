@@ -22,7 +22,6 @@ export const ExampleDataFromCode = () => {
 				<a target="_blank" className="underline" href={languagesUrl}>
 					{languagesUrl}
 				</a>
-				.
 			</p>
 			<ul className="list-disc ml-4">
 				{languages.map((language, index) => {
