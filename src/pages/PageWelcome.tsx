@@ -28,11 +28,9 @@ export const PageWelcome = () => {
 
 	return (
 		<>
-			<ExampleArea/>
-			<div>
-				<p>
-					There are there {languages.length} languages, loaded from
-					data as code:{" "}
+			<ExampleArea title="Data from code">
+				<p className="mb-2">
+					These are {languages.length} languages being loaded from:{" "}
 					<a
 						target="_blank"
 						className="underline"
@@ -47,6 +45,9 @@ export const PageWelcome = () => {
 						return <li key={index}>{language}</li>;
 					})}
 				</ul>
+			</ExampleArea>
+			<div>
+				<p></p>
 			</div>
 		</>
 	);
