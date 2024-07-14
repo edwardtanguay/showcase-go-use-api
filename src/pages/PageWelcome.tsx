@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import * as config from "../config";
 import { Skill } from "../types";
+import { Example, ExampleArea } from "../components/ExampleArea";
 
 const languagesUrl = `${config.backendUrl()}/languages`;
 const skillsUrl = `${config.backendUrl()}/skills`;
@@ -27,6 +28,7 @@ export const PageWelcome = () => {
 
 	return (
 		<>
+			<ExampleArea/>
 			<div>
 				<p>
 					There are there {languages.length} languages, loaded from
