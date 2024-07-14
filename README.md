@@ -2,6 +2,8 @@
 
 This site is the frontend to a showcase GO API that gets data from various sources.
 
+Online here: https://showcase-go-use-api.vercel.app
+
 ## features
 
 - Vite
