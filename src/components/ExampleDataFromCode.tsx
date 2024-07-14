@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ExampleArea } from "./ExampleArea";
+import { AreaExample } from "./AreaExample";
 import * as config from "../config";
 
 const languagesUrl = `${config.backendUrl()}/languages`;
@@ -16,23 +16,19 @@ export const ExampleDataFromCode = () => {
 	}, []);
 
 	return (
-			<ExampleArea title="Data from code">
-				<p className="mb-2">
-					These are {languages.length} languages being loaded from:{" "}
-					<a
-						target="_blank"
-						className="underline"
-						href={languagesUrl}
-					>
-						{languagesUrl}
-					</a>
-					.
-				</p>
-				<ul className="list-disc ml-4">
-					{languages.map((language, index) => {
-						return <li key={index}>{language}</li>;
-					})}
-				</ul>
-			</ExampleArea>
-	)
-}
+		<AreaExample title="Data from code">
+			<p className="mb-2">
+				These are {languages.length} languages being loaded from:{" "}
+				<a target="_blank" className="underline" href={languagesUrl}>
+					{languagesUrl}
+				</a>
+				.
+			</p>
+			<ul className="list-disc ml-4">
+				{languages.map((language, index) => {
+					return <li key={index}>{language}</li>;
+				})}
+			</ul>
+		</AreaExample>
+	);
+};
