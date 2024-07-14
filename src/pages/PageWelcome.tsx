@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import * as config from "../config";
+import { Skill } from "../types";
 
-const languagesUrl = `${config.backendUrl()}/languages`; 
+const languagesUrl = `${config.backendUrl()}/languages`;
+const skillsUrl = `${config.backendUrl()}/skills`;
 
 export const PageWelcome = () => {
 	const [languages, setLanguages] = useState<string[]>([]);
+	const [skills, setSkills] = useState<Skill[]>([]);
 
 	useEffect(() => {
 		(async () => {
@@ -14,14 +17,35 @@ export const PageWelcome = () => {
 		})();
 	}, []);
 
+	useEffect(() => {
+		(async () => {
+			const response = await fetch(skillsUrl);
+			const _skills: Skill[] = await response.json();
+			setSkills(_skills);
+		})();
+	}, []);
+
 	return (
 		<>
-			<p>There are there {languages.length} languages, loaded from <a target="_blank" className="underline" href={languagesUrl}>{languagesUrl}</a>.</p>
-			<ul className="list-disc ml-4">
-				{languages.map((language, index) => {
-					return <li key={index}>{language}</li>;
-				})}
-			</ul>
+			<div>
+				<p>
+					There are there {languages.length} languages, loaded from
+					data as code:{" "}
+					<a
+						target="_blank"
+						className="underline"
+						href={languagesUrl}
+					>
+						{languagesUrl}
+					</a>
+					.
+				</p>
+				<ul className="list-disc ml-4">
+					{languages.map((language, index) => {
+						return <li key={index}>{language}</li>;
+					})}
+				</ul>
+			</div>
 		</>
 	);
 };
